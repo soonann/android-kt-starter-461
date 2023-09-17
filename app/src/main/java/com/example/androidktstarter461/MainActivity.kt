@@ -32,4 +32,9 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun calculator(view: View) {
+        val intent = Intent(this, DiscountCalculator::class.java)
+        startActivity(intent)
+    }
+
 }

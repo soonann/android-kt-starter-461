@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AndroidKTStarter461"
         tools:targetApi="31">
         <activity
+            android:name=".AddNewWord"
+            android:exported="false" />
+        <activity
+            android:name=".DiscountCalculator"
+            android:exported="false" />
+        <activity
             android:name=".RadioButtonDemo"
             android:exported="false" />
         <activity

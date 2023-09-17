@@ -1,5 +1,7 @@
 package com.example.androidktstarter461
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +11,8 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import java.io.File
 import java.util.Scanner
 
 class ListDemo : AppCompatActivity() {
@@ -22,12 +26,21 @@ class ListDemo : AppCompatActivity() {
     private lateinit var selectedWord: String
     private var selectedWordList = ArrayList<String>()
 
+    private val getResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        if (it.resultCode == RESULT_OK) {
+            val newWord = it.data!!.getStringExtra("newWord")
+            val newList = it.data!!.getStringExtra("newList").toString().split(",")
+
+            words.add(newWord!!)
+            wordsMap[newWord] = newList as ArrayList<String>
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_demo)
 
-        val scanner1 = Scanner(resources.openRawResource(R.raw.help))
-        readFile(scanner1)
+        getAllWordsFromFiles()
 
         val wordsListView = findViewById<ListView>(R.id.listView)
 
@@ -52,6 +65,18 @@ class ListDemo : AppCompatActivity() {
         }
     }
 
+    private fun getAllWordsFromFiles() {
+
+        val scanner1 = Scanner(resources.openRawResource(R.raw.help))
+        readFile(scanner1)
+
+        val file = File(filesDir.path + "/added_words.txt")
+        if (file.exists()) {
+            val scanner2 = Scanner(openFileInput("added_words.txt"))
+            readFile(scanner2)
+        }
+    }
+
     private fun readFile(scanner: Scanner) {
         while(scanner.hasNextLine()) {
             val line = scanner.nextLine()
@@ -59,7 +84,6 @@ class ListDemo : AppCompatActivity() {
 //
 //            // split a string of words by comma
             val wordDesc = pieces[1].split(",")
-            Log.d("wordDesc", wordDesc.toString())
 //
             words.add(pieces[0])
             wordsMap[pieces[0]] = wordDesc as ArrayList<String>
@@ -96,5 +120,12 @@ class ListDemo : AppCompatActivity() {
 
         displayList.clear()
         displayList = selectedWordList
+    }
+
+    fun addWordBtnClicked(view: View) {
+        val intent = Intent(this, AddNewWord::class.java)
+        val hintWord = intent.putExtra("hintWord", "Enter new word here!")
+        val hintDef = intent.putExtra("hintList", "Enter a comma separated string of words here!")
+        getResult.launch(intent)
     }
 }
