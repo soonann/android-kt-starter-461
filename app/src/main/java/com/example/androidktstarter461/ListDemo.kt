@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Spinner
+import android.widget.Toast
 import java.util.Scanner
 
 class ListDemo : AppCompatActivity() {
@@ -28,6 +29,12 @@ class ListDemo : AppCompatActivity() {
         val scanner1 = Scanner(resources.openRawResource(R.raw.help))
         readFile(scanner1)
 
+        val wordsListView = findViewById<ListView>(R.id.listView)
+
+        wordsListView.setOnItemClickListener{ list, item, index, id ->
+            Toast.makeText(this, "Selected word: ${list.getItemAtPosition(index)}", Toast.LENGTH_SHORT).show()
+        }
+
         val wordSpinner = findViewById<Spinner>(R.id.spinner)
         spinnerAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, words)
         wordSpinner.adapter = spinnerAdapter
@@ -36,7 +43,7 @@ class ListDemo : AppCompatActivity() {
             // if an item is selected
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 selectedWord = p0!!.getItemAtPosition(p2).toString()
-                setUpList() // fixed error
+                setUpList()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
