@@ -18,13 +18,15 @@
         android:id="@+id/buttonListViewDemo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ListViewDemo" />
+        android:text="ListViewDemo"
+        android:onClick="startListDemo"/>
 
     <Button
         android:id="@+id/buttonRadioButtonDemo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="RadioButtonDemo" />
+        android:text="RadioButtonDemo"
+        android:onClick="startRadioDemo"/>
 
     <Button
         android:id="@+id/button8"

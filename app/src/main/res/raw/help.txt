@@ -1,0 +1,7 @@
+demo	a,list,of,words
+cs461	mobile,and,pervasive,computing,and,applications
+cs301	information,technology,solution,architecture
+cs302	information,technology,lifecycle,management
+cs104	disgusting,maths
+is112	data,management
+cs102	programming,fundamentals,object,oriented,programming
