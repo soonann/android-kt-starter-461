@@ -12,21 +12,21 @@
         android:id="@+id/buttonButtonsDemo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ButtonsDemo"
-        />
+        android:text="Buttons Demo"
+        android:onClick="startButtonDemo"/>
 
     <Button
         android:id="@+id/buttonListViewDemo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ListViewDemo"
+        android:text="ListView Demo"
         android:onClick="startListDemo"/>
 
     <Button
         android:id="@+id/buttonRadioButtonDemo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="RadioButtonDemo"
+        android:text="RadioButton Demo"
         android:onClick="startRadioDemo"/>
 
     <Button
@@ -35,16 +35,4 @@
         android:layout_height="wrap_content"
         android:text="Discount Calculator"
         android:onClick="calculator"/>
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
 </LinearLayout>

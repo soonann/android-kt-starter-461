@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // starts the button demo
-    private fun startButtonDemo(){
+    fun startButtonDemo(view: View){
         val intent = Intent(this, ButtonDemo::class.java)
         startActivity(intent)
     }
