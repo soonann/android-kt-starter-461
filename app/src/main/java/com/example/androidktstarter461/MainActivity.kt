@@ -17,24 +17,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        startRadioDemo()
-
-        val accelDemo = findViewById<Button>(R.id.buttonAcceleratorDemo)
-        accelDemo.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this, AccelerometerDemo::class.java)
-            startActivity(intent)
-
-        })
-
     }
 
-    // starts the button demo
+
+    // starts the accel demo
     fun onAcceleratorDemo(view: View){
         val intent = Intent(this, AccelerometerDemo::class.java)
         startActivity(intent)
     }
 
-    // starts the button demo
+    // starts the sensors demo
     fun onSensorsDemo(view: View){
         val intent = Intent(this, LuminosityDemo::class.java)
         startActivity(intent)
