@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import com.example.androidktstarter461.files.FileDemo
 import com.example.androidktstarter461.inputs.ButtonDemo
 import com.example.androidktstarter461.inputs.DiscountCalculator
 import com.example.androidktstarter461.inputs.RadioButtonDemo
@@ -19,6 +20,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // starts the files demo
+    fun onFilesDemo(view: View){
+        val intent = Intent(this, FileDemo::class.java)
+        startActivity(intent)
+    }
 
     // starts the accel demo
     fun onAcceleratorDemo(view: View){
