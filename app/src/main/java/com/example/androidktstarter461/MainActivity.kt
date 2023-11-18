@@ -4,11 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import com.example.androidktstarter461.inputs.ButtonDemo
 import com.example.androidktstarter461.inputs.DiscountCalculator
 import com.example.androidktstarter461.inputs.RadioButtonDemo
 import com.example.androidktstarter461.lists.ListDemo
-import com.example.androidktstarter461.sensors.SensorsDemo
+import com.example.androidktstarter461.sensors.AccelerometerDemo
+import com.example.androidktstarter461.sensors.LuminosityDemo
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,11 +19,24 @@ class MainActivity : AppCompatActivity() {
 
 //        startRadioDemo()
 
+        val accelDemo = findViewById<Button>(R.id.buttonAcceleratorDemo)
+        accelDemo.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this, AccelerometerDemo::class.java)
+            startActivity(intent)
+
+        })
+
+    }
+
+    // starts the button demo
+    fun onAcceleratorDemo(view: View){
+        val intent = Intent(this, AccelerometerDemo::class.java)
+        startActivity(intent)
     }
 
     // starts the button demo
     fun onSensorsDemo(view: View){
-        val intent = Intent(this, SensorsDemo::class.java)
+        val intent = Intent(this, LuminosityDemo::class.java)
         startActivity(intent)
     }
 

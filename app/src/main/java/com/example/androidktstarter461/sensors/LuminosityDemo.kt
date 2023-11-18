@@ -12,14 +12,14 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import com.example.androidktstarter461.R
 
-class SensorsDemo : AppCompatActivity(), SensorEventListener{
+class LuminosityDemo : AppCompatActivity(), SensorEventListener{
 
     private lateinit var sensorMan: SensorManager
     private lateinit var luminosity: Sensor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sensors_demo)
+        setContentView(R.layout.activity_luminosity_demo)
 
         // get the sensor manager
         sensorMan = getSystemService(SENSOR_SERVICE) as SensorManager

@@ -14,6 +14,14 @@
         android:layout_height="wrap_content"
         android:text="Buttons Demo"
         android:onClick="startButtonDemo"/>
+
+    <Button
+        android:id="@+id/buttonAcceleratorDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Accelerator Demo"
+        />
+
     <Button
         android:id="@+id/buttonSensorsDemo"
         android:layout_width="match_parent"

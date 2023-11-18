@@ -5,6 +5,7 @@ import java.util.Random
 
 class Utility {
 
+    // custom random function
     // inclusive lower bound with exclusive upper bound
     private fun pickRandomNumber(lowerBound: Int, upperBound: Int): Int{
         val rand = Random()
@@ -13,5 +14,7 @@ class Utility {
         // specify the non-inclusive upper bound
         return lowerBound + rand.nextInt(tmpUpperBound)
     }
+
+    // build in random function
 
 }
