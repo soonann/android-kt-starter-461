@@ -1,4 +1,4 @@
-package com.example.androidktstarter461
+package com.example.androidktstarter461.lists
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,10 +7,10 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import java.io.File
+import com.example.androidktstarter461.R
 import java.io.PrintStream
 
-class AddNewWord : AppCompatActivity() {
+class ListDemoAddWord : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_new_word)

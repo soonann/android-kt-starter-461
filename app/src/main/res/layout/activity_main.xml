@@ -14,6 +14,12 @@
         android:layout_height="wrap_content"
         android:text="Buttons Demo"
         android:onClick="startButtonDemo"/>
+    <Button
+        android:id="@+id/buttonSensorsDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sensors Demo"
+        android:onClick="onSensorsDemo"/>
 
     <Button
         android:id="@+id/buttonListViewDemo"

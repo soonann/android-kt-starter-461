@@ -4,6 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.androidktstarter461.inputs.ButtonDemo
+import com.example.androidktstarter461.inputs.DiscountCalculator
+import com.example.androidktstarter461.inputs.RadioButtonDemo
+import com.example.androidktstarter461.lists.ListDemo
+import com.example.androidktstarter461.sensors.SensorsDemo
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,6 +17,12 @@ class MainActivity : AppCompatActivity() {
 
 //        startRadioDemo()
 
+    }
+
+    // starts the button demo
+    fun onSensorsDemo(view: View){
+        val intent = Intent(this, SensorsDemo::class.java)
+        startActivity(intent)
     }
 
     // starts the button demo

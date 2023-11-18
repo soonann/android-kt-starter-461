@@ -1,10 +1,8 @@
-package com.example.androidktstarter461
+package com.example.androidktstarter461.lists
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -12,13 +10,16 @@ import android.widget.ListView
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.androidktstarter461.R
 import java.io.File
 import java.util.Scanner
 
 class ListDemo : AppCompatActivity() {
-    private lateinit var listAdapter: ArrayAdapter<String>
+
     private lateinit var spinnerAdapter: ArrayAdapter<String>
 
+    // an adapter to populate the list view
+    private lateinit var listAdapter: ArrayAdapter<String>
     private var wordsMap = HashMap<String, ArrayList<String>>()
     private var words = ArrayList<String>()
     private var displayList = ArrayList<String>()
@@ -123,7 +124,7 @@ class ListDemo : AppCompatActivity() {
     }
 
     fun addWordBtnClicked(view: View) {
-        val intent = Intent(this, AddNewWord::class.java)
+        val intent = Intent(this, ListDemoAddWord::class.java)
         val hintWord = intent.putExtra("hintWord", "Enter new word here!")
         val hintDef = intent.putExtra("hintList", "Enter a comma separated string of words here!")
         getResult.launch(intent)
